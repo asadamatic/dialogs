@@ -1,7 +1,7 @@
 name: dialogs
 description: This flutter package provides aesthetically designed dialog box with customization options.
 version: 0.0.1
-homepage:
+homepage: https://github.com/asadamatic/dialogs
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

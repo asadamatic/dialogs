@@ -3,7 +3,11 @@ library dialogs;
 import 'package:flutter/material.dart';
 
 class ChoiceDialog extends StatefulWidget {
-  final Color dialogBackgroundColor, titleColor, messageColor;
+  final Color dialogBackgroundColor,
+      titleColor,
+      messageColor,
+      buttonOkColor,
+      buttonCancelBorderColor;
   final String title, message, buttonOkText, buttonCancelText;
   final Function buttonOkOnPressed, buttonCancelOnPressed;
   final double dialogRadius, buttonRadius;
@@ -13,6 +17,14 @@ class ChoiceDialog extends StatefulWidget {
     ///[BackgroundColor] for dialog
     ///Set to [Colors.white] by default
     this.dialogBackgroundColor = Colors.white,
+
+    ///[Color] for [OkButton] background color
+
+    this.buttonOkColor,
+
+    ///This [Color] will be used for the border of [CancelButton]
+    ///By default the border of [Cancel] button is same as the background color of [OkButton]
+    this.buttonCancelBorderColor,
 
     ///[String] to be displayed as the [Title] on the dialog
     this.title = 'Dialog Title',
@@ -73,6 +85,10 @@ class _ChoiceDialogState extends State<ChoiceDialog> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+
+            ///Title for [Dialog]
+            ///By default it's value is 'Dialog',
+            /// you can change it using [title] parameter
             Padding(
               padding: const EdgeInsets.only(
                   top: 0.0, left: 3.0, right: 3.0, bottom: 4.0),
@@ -85,6 +101,10 @@ class _ChoiceDialogState extends State<ChoiceDialog> {
                     fontWeight: FontWeight.bold),
               ),
             ),
+
+            ///Message for [Dialog]
+            ///By default it's value is 'Dialog Message',
+            /// you can change it using [message] parameter
             Padding(
               padding: const EdgeInsets.only(
                   top: 12.0, bottom: 16.0, right: 3.0, left: 3.0),
@@ -97,80 +117,101 @@ class _ChoiceDialogState extends State<ChoiceDialog> {
                     fontWeight: FontWeight.w400),
               ),
             ),
+
+            ///This dialog contains two buttons
+            ///Respectively for 'positive' and 'negative' actions
             Padding(
               padding: const EdgeInsets.only(top: 16.0, left: 3.0, right: 3.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+
+                  ///[ButtonCancel] refers to 'negative' action button
                   Expanded(
                     flex: 5,
                     child: widget.iconButtonCancel == null
                         ? FlatButton(
-                      child: Text(
-                        '${widget.buttonCancelText}',
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 0.0),
-                      color: Colors.white,
-                      textColor: Theme.of(context).primaryColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              widget?.buttonRadius ?? 0.0),
-                          side: BorderSide(
-                            color: Theme.of(context).primaryColor,
-                          )),
-                      onPressed: widget.buttonCancelOnPressed,
-                    )
+                            child: Text(
+                              '${widget.buttonCancelText}',
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 0.0),
+                            color: Colors.white,
+                            textColor: Theme.of(context).primaryColor,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                    widget?.buttonRadius ?? 0.0),
+                                side: BorderSide(
+                                  color: Theme.of(context).primaryColor,
+                                )),
+                            onPressed: widget?.buttonCancelOnPressed ??
+                                () {
+                                  Navigator.pop(context);
+                                },
+                          )
                         : FlatButton.icon(
-                      icon: widget.iconButtonCancel,
-                      label: Text(
-                        '${widget.buttonCancelText}',
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 0.0),
-                      color: Colors.white,
-                      textColor: Theme.of(context).primaryColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              widget?.buttonRadius ?? 0.0),
-                          side: BorderSide(
-                            color: Theme.of(context).primaryColor,
-                          )),
-                      onPressed: widget.buttonCancelOnPressed,
-                    ),
+                            icon: widget.iconButtonCancel,
+                            label: Text(
+                              '${widget.buttonCancelText}',
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 0.0),
+                            color: Colors.white,
+                            textColor: Theme.of(context).primaryColor,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                    widget?.buttonRadius ?? 0.0),
+                                side: BorderSide(
+                                  color: widget?.buttonOkColor ??
+                                      Theme.of(context).primaryColor,
+                                )),
+                            onPressed: widget?.buttonCancelOnPressed ??
+                                () {
+                                  Navigator.pop(context);
+                                },
+                          ),
                   ),
                   Spacer(
                     flex: 1,
                   ),
+
+                  ///[ButtonCOk] refers to 'positive' action button
                   Expanded(
                     flex: 5,
                     child: widget.iconButtonOk == null
                         ? FlatButton(
-                      child: Text(
-                        '${widget.buttonOkText}',
-                      ),
-                      textColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 0.0),
-                      color: Theme.of(context).primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            widget?.buttonRadius ?? 0.0),
-                      ),
-                      onPressed: widget.buttonOkOnPressed,
-                    )
+                            child: Text(
+                              '${widget.buttonOkText}',
+                            ),
+                            textColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 0.0),
+                            color: Theme.of(context).primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  widget?.buttonRadius ?? 0.0),
+                            ),
+                            onPressed: widget?.buttonOkOnPressed ??
+                                () {
+                                  Navigator.pop(context);
+                                },
+                          )
                         : FlatButton.icon(
-                      icon: Icon(Icons.done),
-                      label: Text(
-                        '${widget.buttonOkText}',
-                      ),
-                      textColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 0.0),
-                      color: Theme.of(context).primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            widget?.buttonRadius ?? 0.0),
-                      ),
-                      onPressed: widget.buttonOkOnPressed,
-                    ),
+                            icon: Icon(Icons.done),
+                            label: Text(
+                              '${widget.buttonOkText}',
+                            ),
+                            textColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 0.0),
+                            color: widget?.buttonOkColor ??
+                                Theme.of(context).primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  widget?.buttonRadius ?? 0.0),
+                            ),
+                            onPressed: widget?.buttonOkOnPressed ??
+                                () {
+                                  Navigator.pop(context);
+                                },
+                          ),
                   ),
                 ],
               ),
