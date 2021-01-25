@@ -2,7 +2,7 @@ library dialogs;
 
 import 'package:flutter/material.dart';
 
-class ChoiceDialog extends StatefulWidget {
+class MessageDialog extends StatefulWidget {
   final Color
 
       ///[BackgroundColor] for dialog
@@ -16,11 +16,7 @@ class ChoiceDialog extends StatefulWidget {
       messageColor,
 
       ///[Color] for [OkButton] background color
-      buttonOkColor,
-
-      ///This [Color] will be used for the border of [CancelButton]
-      ///By default the border of [Cancel] button is same as the background color of [OkButton]
-      buttonCancelBorderColor;
+      buttonOkColor;
   final String
 
       ///[String] to be displayed as the [Title] on the dialog
@@ -32,15 +28,8 @@ class ChoiceDialog extends StatefulWidget {
       ///[String] argument for the [Text] widget of [Ok] button on the dialog
       buttonOkText,
 
-      ///[String] argument for the [Text] widget of [Cancel] button on the dialog
-      buttonCancelText;
-  final Function
-
       ///[onPressed] callback for [Ok] button on the dialog
-      buttonOkOnPressed,
-
-      ///[onPressed] callback for [Cancel] button on the dialog
-      buttonCancelOnPressed;
+      buttonOkOnPressed;
   final double
 
       ///Set [dialogRadius] to 0.0 for rectangular borders
@@ -51,34 +40,27 @@ class ChoiceDialog extends StatefulWidget {
   final Icon
 
       ///Icon for [Okay] button on the dialog
-      iconButtonOk,
+      iconButtonOk;
 
-      ///Icon for [Cancel] button on the dialog
-      iconButtonCancel;
-
-  ChoiceDialog({
+  MessageDialog({
     this.dialogBackgroundColor = Colors.white,
     this.buttonOkColor,
-    this.buttonCancelBorderColor,
     this.title = 'Dialog Title',
     this.titleColor,
     this.message = 'Dialog Message',
     this.messageColor,
     this.buttonOkText = 'Ok',
-    this.buttonCancelText = 'Cancel',
     this.buttonOkOnPressed,
-    this.buttonCancelOnPressed,
     this.dialogRadius = 15.0,
     this.buttonRadius = 18.0,
     this.iconButtonOk,
-    this.iconButtonCancel,
   });
 
   @override
-  _ChoiceDialogState createState() => _ChoiceDialogState();
+  _MessageDialogState createState() => _MessageDialogState();
 }
 
-class _ChoiceDialogState extends State<ChoiceDialog> {
+class _MessageDialogState extends State<MessageDialog> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -136,56 +118,8 @@ class _ChoiceDialogState extends State<ChoiceDialog> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ///[ButtonCancel] refers to 'negative' action button
-                  Expanded(
-                    flex: 5,
-                    child: widget.iconButtonCancel == null
-                        ? FlatButton(
-                            child: Text(
-                              '${widget.buttonCancelText}',
-                            ),
-                            padding: const EdgeInsets.symmetric(vertical: 0.0),
-                            color: Colors.white,
-                            textColor: Theme.of(context).primaryColor,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    widget?.buttonRadius ?? 0.0),
-                                side: BorderSide(
-                                  color: Theme.of(context).primaryColor,
-                                )),
-                            onPressed: widget?.buttonCancelOnPressed ??
-                                () {
-                                  Navigator.pop(context);
-                                },
-                          )
-                        : FlatButton.icon(
-                            icon: widget.iconButtonCancel,
-                            label: Text(
-                              '${widget.buttonCancelText}',
-                            ),
-                            padding: const EdgeInsets.symmetric(vertical: 0.0),
-                            color: Colors.white,
-                            textColor: Theme.of(context).primaryColor,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    widget?.buttonRadius ?? 0.0),
-                                side: BorderSide(
-                                  color: widget?.buttonOkColor ??
-                                      Theme.of(context).primaryColor,
-                                )),
-                            onPressed: widget?.buttonCancelOnPressed ??
-                                () {
-                                  Navigator.pop(context);
-                                },
-                          ),
-                  ),
-                  Spacer(
-                    flex: 1,
-                  ),
-
                   ///[ButtonCOk] refers to 'positive' action button
                   Expanded(
-                    flex: 5,
                     child: widget.iconButtonOk == null
                         ? FlatButton(
                             child: Text(

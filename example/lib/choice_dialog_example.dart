@@ -5,10 +5,10 @@ class ChoiceDialogExample extends StatefulWidget {
   ChoiceDialogExample({Key key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ChoiceDialogExampleState createState() => _ChoiceDialogExampleState();
 }
 
-class _MyHomePageState extends State<ChoiceDialogExample> {
+class _ChoiceDialogExampleState extends State<ChoiceDialogExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

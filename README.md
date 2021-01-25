@@ -2,8 +2,19 @@
 
 This flutter package provides aesthetically designed dialog box with customization options.
 
+### Choice Dialog
 <p>
-  <img width="216px" alt="Activated Search App BAr" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog.gif"/>
+  <img width="216px" alt="Choice Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog.gif"/>
+  <img width="216px" alt="Choice Dialog Rectangular" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog_rectangular.jpg"/>
+  <img width="216px" alt="Choice Dialog Rectangular Buttons" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog_rectangular_buttons.jpg"/>
+</p>
+
+
+### Message Dialog
+<p>
+  <img width="216px" alt="Message Dialog Gif" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/message_dialog.gif"/>
+  <img width="216px" alt="Message Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/message_dialog.jpg"/>
+  <img width="216px" alt="Message Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog_rectangular_buttons.jpg"/>
 </p>
 
 [![Pub Version](https://img.shields.io/pub/v/dialogs?logo=flutter&style=for-the-badge)](https://pub.dev/packages/dialogs)
@@ -17,12 +28,12 @@ To use this plugin, add `dialogs` as a
 [dependency in your pubspec.yaml file](https://pub.dev/packages/dialogs/install).
 
 
-###Implementation:
+### Implementation:
 
 * Import `import 'package:dialogs/ChoiceDialog/dialogs.dart';`
 
 
-##ChoiceDialog
+### ChoiceDialog
 
 * use `showDialog` function and call the **Choice Dialog** .
 ```
@@ -32,7 +43,18 @@ showDialog(
 );
 ```
 
-                                                                                      ##You are good to go!
+### MessageDialog
+
+* use `showDialog` function and call the **Choice Dialog** .
+```
+showDialog(
+           context: context,
+           builder: (buildContext) => MessageDialog()
+);
+```
+
+## <div align="center">You are good to go 💯</div>
+
 
 In order to add the `ChoiceDialog` to your app, there are several attributes that are important parameters you might have to use frequently:
 
