@@ -9,3 +9,7 @@
 ## [0.0.3]- 1-Mar-2021.
 
 * Fixed a bug in `Message Dialog`.
+
+## [0.0.4]- 1-Mar-2021.
+
+* Fixed a bug in `Message Dialog`.
