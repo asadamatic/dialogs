@@ -6,3 +6,7 @@
 
 * Added documentation for apis.
 * Added `Message Dialog`.
+
+## [0.0.3]- 1-Mar-2021.
+
+* Fixed a bug in `Message Dialog`.

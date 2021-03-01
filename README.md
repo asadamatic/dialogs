@@ -14,7 +14,7 @@ This flutter package provides aesthetically designed dialog box with customizati
 <p>
   <img width="216px" alt="Message Dialog Gif" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/message_dialog.gif"/>
   <img width="216px" alt="Message Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/message_dialog.jpg"/>
-  <img width="216px" alt="Message Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog_rectangular_buttons.jpg"/>
+  <img width="216px" alt="Message Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/message_dialog_rectangular_buttons.jpg"/>
 </p>
 
 [![Pub Version](https://img.shields.io/pub/v/dialogs?logo=flutter&style=for-the-badge)](https://pub.dev/packages/dialogs)

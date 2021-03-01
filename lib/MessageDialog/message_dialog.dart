@@ -26,7 +26,9 @@ class MessageDialog extends StatefulWidget {
       message,
 
       ///[String] argument for the [Text] widget of [Ok] button on the dialog
-      buttonOkText,
+      buttonOkText;
+
+  Function
 
       ///[onPressed] callback for [Ok] button on the dialog
       buttonOkOnPressed;
