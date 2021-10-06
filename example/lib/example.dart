@@ -1,4 +1,4 @@
-import 'package:example/message_dialog_example.dart';
+import 'package:example/dialogs_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {

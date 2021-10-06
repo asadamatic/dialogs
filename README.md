@@ -30,33 +30,53 @@ To use this plugin, add `dialogs` as a
 
 ### Implementation:
 
-* Import `import 'package:dialogs/ChoiceDialog/dialogs.dart';`
+
+* `import 'package:dialogs/ChoiceDialog/dialogs.dart';` 
+
+* `import 'package:dialogs/dialogs/message_dialog.dart';`
 
 
 ### ChoiceDialog
 
-* use `showDialog` function and call the **Choice Dialog** .
+* use `ChoiceDialog().show()` function to display the dialog.
 ```
-showDialog(
-           context: context,
-           builder: (buildContext) => ChoiceDialog()
-);
+
+ChoiceDialog().show(context);
+
+```
+##OR
+```
+
+final choiceDialog = ChoiceDialog();
+choiceDialog.show(context);
+
 ```
 
 ### MessageDialog
 
-* use `showDialog` function and call the **Choice Dialog** .
+* use `MessageDialog().show()` function and call the **Choice Dialog** .
 ```
-showDialog(
-           context: context,
-           builder: (buildContext) => MessageDialog()
-);
+
+MessageDialog().show(context);
+
+```
+## OR
+```
+
+final messageDialog = MessageDialog();
+choiceDialog.show(context);
+
 ```
 
 ## <div align="center">You are good to go 💯</div>
 
+---
 
-In order to add the `ChoiceDialog` to your app, there are several attributes that are important parameters you might have to use frequently:
+
+
+\
+\
+In order to add the `ChoiceDialog`, `MessageDialog` to your app, there are several attributes that are important parameters that you might need frequently:
 
 | Attribute | Type  | Default | Required | Description |
 |-----------|-------|---------|-------------|----------|
@@ -66,6 +86,16 @@ In order to add the `ChoiceDialog` to your app, there are several attributes tha
 | `buttonRadius` | `double` | `18.0` | `No` | Determines the borderRadius of action buttons. |
 | `iconButtonOk` | `Icon` | `null` | `No` | Renders a FlatButton with the provided icon for positive action. |
 | `iconButtonCancel` | `Icon` | `null` | `No` | Renders a FlatButton with the provided icon for negative action. |
+
+\
+`show()` also provides some useful parameters of `showDialog()` function
+
+
+| Attribute | Type  | Default | Required | Description |
+|-----------|-------|---------|-------------|----------|
+| `context` | `BuildContext` | `Null` | `Yes` | The context argument is used to look up the Navigator and Theme for the dialog. |
+| `barrierDismissible` | `bool` | `true` | `No` | Indicates whether tapping on the barrier will dismiss the dialog. |
+| `barrierColor` | `Color` | `Colors.black54`  | `No` | Specifies the color of the modal barrier that darkens everything below the dialog. |
 
 ## CREDITS
 ### Contributors
