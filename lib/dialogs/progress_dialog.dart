@@ -130,7 +130,7 @@ class ProgressDialog extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Text(
-                          '${loadingText ?? ''}',
+                          loadingText,
                           style: TextStyle(
                               letterSpacing: .9, color: textColor, fontSize: 16.0),
                         ),

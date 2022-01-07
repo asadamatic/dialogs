@@ -24,3 +24,7 @@
 
 * Added `ChoiceDialog` to a separate file.
 * Comes with `legacy_progess_dialog` 
+
+## Release [0.0.7]- 07-Jan-2022.
+
+* Fixes issue# 1
