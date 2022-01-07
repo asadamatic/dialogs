@@ -1,5 +1,4 @@
-import 'package:dialogs/dialogs/dialogs.dart';
-import 'package:dialogs/dialogs/message_dialog.dart';
+import 'package:dialogs/dialogs.dart';
 import 'package:flutter/material.dart';
 
 class MessageDialogExample extends StatefulWidget {
@@ -65,6 +64,27 @@ class _MessageDialogExampleState extends State<MessageDialogExample> {
                 },
                 child: Text(
                   'Show Message Dialog',
+                )),
+            TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.blue,
+                  ),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+                onPressed: () async {
+                  ProgressDialog progressDialog = ProgressDialog(
+                    context: context,
+                    backgroundColor: Colors.blue,
+                    textColor: Colors.white,
+                  );
+
+                  progressDialog.show();
+                  Future.delayed(Duration(seconds: 3))
+                      .then((value) => progressDialog.dismiss());
+                },
+                child: Text(
+                  'Show Progress Dialog',
                 )),
           ],
         ),

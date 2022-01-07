@@ -19,3 +19,8 @@
 * Sound null safety enabled
 * Show and dismiss methods added for dialog
 * Includes improved documentation
+
+## [0.0.6]- 7-Jan-2022.
+
+* Added `ChoiceDialog` to a separate file.
+* Comes with `legacy_progess_dialog` 

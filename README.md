@@ -2,6 +2,8 @@
 
 This flutter package provides aesthetically designed dialog box with customization options.
 
+## Now comes with [`legacy_progress_dialog`](https://pub.dev/packages/legacy_progress_dialog)
+
 ### Choice Dialog
 <p>
   <img width="216px" alt="Choice Dialog" src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/choice_dialog.gif"/>
@@ -31,9 +33,7 @@ To use this plugin, add `dialogs` as a
 ### Implementation:
 
 
-* `import 'package:dialogs/ChoiceDialog/dialogs.dart';` 
-
-* `import 'package:dialogs/dialogs/message_dialog.dart';`
+* `import 'package:dialogs/dialogs.dart';`
 
 
 ### ChoiceDialog
@@ -68,9 +68,28 @@ choiceDialog.show(context);
 
 ```
 
+
+
+<Img src="https://raw.githubusercontent.com/asadamatic/dialogs/master/assets/progress_dialog.png" align = "top" height = "350" height="300em" />
+
+### Show progress dialog :
+```
+//Create an instance of ProgressDialog
+ProgressDialog progressDialog = ProgressDialog(
+                  context: context,
+                  backgroundColor: Colors.blue,
+                  textColor: Colors.White,
+                );
+// show dialog
+progressDialog.show();
+
+//close dialog
+progressDialog.dismiss();
+```
+
+
 ## <div align="center">You are good to go 💯</div>
 
----
 
 
 

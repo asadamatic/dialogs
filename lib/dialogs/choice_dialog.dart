@@ -123,7 +123,7 @@ class ChoiceDialog extends StatelessWidget {
 
   void show(BuildContext? context,
       {Color? barrierColor = Colors.black54,
-      bool? barrierDismissible = true}) async {
+        bool? barrierDismissible = true}) async {
     if (!_isShowing) {
       _isShowing = true;
       if (_choiceDialog == null) _initializeProgress();
@@ -199,59 +199,59 @@ class ChoiceDialog extends StatelessWidget {
                     flex: 5,
                     child: iconButtonCancel == null
                         ? TextButton(
-                            child: Text(
-                              '$buttonCancelText',
-                            ),
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(
-                                  Theme.of(context).primaryColor),
-                              padding: MaterialStateProperty.all(
-                                  const EdgeInsets.symmetric(vertical: 0.0)),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.white),
-                              shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                  side: BorderSide(
-                                      color: buttonOkColor ??
-                                          Theme.of(context).primaryColor),
-                                  borderRadius:
-                                      BorderRadius.circular(buttonRadius),
-                                ),
-                              ),
-                            ),
-                            onPressed:
-                                buttonCancelOnPressed as void Function()? ??
-                                    () {
-                                      Navigator.pop(context);
-                                    },
-                          )
-                        : TextButton.icon(
-                            icon: iconButtonCancel!,
-                            label: Text(
-                              '$buttonCancelText',
-                            ),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    const EdgeInsets.symmetric(vertical: 0.0)),
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    side: BorderSide(
-                                        color: buttonOkColor ??
-                                            Theme.of(context).primaryColor),
-                                    borderRadius:
-                                        BorderRadius.circular(buttonRadius),
-                                  ),
-                                ),
-                                foregroundColor: MaterialStateProperty.all(
-                                    Theme.of(context).primaryColor)),
-                            onPressed:
-                                buttonCancelOnPressed as void Function()? ??
-                                    () {
-                                      Navigator.pop(context);
-                                    },
+                      child: Text(
+                        '$buttonCancelText',
+                      ),
+                      style: ButtonStyle(
+                        foregroundColor: MaterialStateProperty.all(
+                            Theme.of(context).primaryColor),
+                        padding: MaterialStateProperty.all(
+                            const EdgeInsets.symmetric(vertical: 0.0)),
+                        backgroundColor:
+                        MaterialStateProperty.all(Colors.white),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            side: BorderSide(
+                                color: buttonOkColor ??
+                                    Theme.of(context).primaryColor),
+                            borderRadius:
+                            BorderRadius.circular(buttonRadius),
                           ),
+                        ),
+                      ),
+                      onPressed:
+                      buttonCancelOnPressed as void Function()? ??
+                              () {
+                            Navigator.pop(context);
+                          },
+                    )
+                        : TextButton.icon(
+                      icon: iconButtonCancel!,
+                      label: Text(
+                        '$buttonCancelText',
+                      ),
+                      style: ButtonStyle(
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.symmetric(vertical: 0.0)),
+                          backgroundColor:
+                          MaterialStateProperty.all(Colors.white),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              side: BorderSide(
+                                  color: buttonOkColor ??
+                                      Theme.of(context).primaryColor),
+                              borderRadius:
+                              BorderRadius.circular(buttonRadius),
+                            ),
+                          ),
+                          foregroundColor: MaterialStateProperty.all(
+                              Theme.of(context).primaryColor)),
+                      onPressed:
+                      buttonCancelOnPressed as void Function()? ??
+                              () {
+                            Navigator.pop(context);
+                          },
+                    ),
                   ),
                   Spacer(
                     flex: 1,
@@ -262,52 +262,52 @@ class ChoiceDialog extends StatelessWidget {
                     flex: 5,
                     child: iconButtonOk == null
                         ? TextButton(
-                            child: Text(
-                              '$buttonOkText',
+                      child: Text(
+                        '$buttonOkText',
+                      ),
+                      style: ButtonStyle(
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.symmetric(vertical: 0.0)),
+                          backgroundColor: MaterialStateProperty.all(
+                              buttonOkColor ??
+                                  Theme.of(context).primaryColor),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius:
+                              BorderRadius.circular(buttonRadius),
                             ),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    const EdgeInsets.symmetric(vertical: 0.0)),
-                                backgroundColor: MaterialStateProperty.all(
-                                    buttonOkColor ??
-                                        Theme.of(context).primaryColor),
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(buttonRadius),
-                                  ),
-                                ),
-                                foregroundColor:
-                                    MaterialStateProperty.all(Colors.white)),
-                            onPressed: buttonOkOnPressed as void Function()? ??
-                                () {
-                                  Navigator.pop(context);
-                                },
-                          )
-                        : TextButton.icon(
-                            icon: Icon(Icons.done),
-                            label: Text(
-                              '$buttonOkText',
-                            ),
-                            style: ButtonStyle(
-                                padding: MaterialStateProperty.all(
-                                    const EdgeInsets.symmetric(vertical: 0.0)),
-                                backgroundColor: MaterialStateProperty.all(
-                                    buttonOkColor ??
-                                        Theme.of(context).primaryColor),
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(buttonRadius),
-                                  ),
-                                ),
-                                foregroundColor:
-                                    MaterialStateProperty.all(Colors.white)),
-                            onPressed: buttonOkOnPressed as void Function()? ??
-                                () {
-                                  Navigator.pop(context);
-                                },
                           ),
+                          foregroundColor:
+                          MaterialStateProperty.all(Colors.white)),
+                      onPressed: buttonOkOnPressed as void Function()? ??
+                              () {
+                            Navigator.pop(context);
+                          },
+                    )
+                        : TextButton.icon(
+                      icon: Icon(Icons.done),
+                      label: Text(
+                        '$buttonOkText',
+                      ),
+                      style: ButtonStyle(
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.symmetric(vertical: 0.0)),
+                          backgroundColor: MaterialStateProperty.all(
+                              buttonOkColor ??
+                                  Theme.of(context).primaryColor),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius:
+                              BorderRadius.circular(buttonRadius),
+                            ),
+                          ),
+                          foregroundColor:
+                          MaterialStateProperty.all(Colors.white)),
+                      onPressed: buttonOkOnPressed as void Function()? ??
+                              () {
+                            Navigator.pop(context);
+                          },
+                    ),
                   ),
                 ],
               ),
